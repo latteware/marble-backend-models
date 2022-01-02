@@ -21,6 +21,11 @@ const getModels = function () {
   return models
 }
 
+const getConnection = function () {
+  return mongoose.connection;
+
+}
+
 const connect = async function (env) {
   await mongoose.connect(env.url)
 }
@@ -29,7 +34,9 @@ module.exports = {
   register,
   loadModels,
   getModels,
+
   connect,
+  getConnection,
 
   Schema
 }
